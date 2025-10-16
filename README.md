@@ -1,3 +1,3 @@
-# GitHub Status Alert
+# Form Caching Example
 
-This project displays an aria-live alert that reports the status of a GitHub lookup. It informs the user when the lookup starts, succeeds, or fails.
+This project demonstrates how to cache the last successful form lookup in localStorage and repopulate the form when the page loads.
