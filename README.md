@@ -1,3 +1,3 @@
-# github_page_fetcher
+# GitHub Status Alert
 
-Publish a Bootstrap page with a form that fetches a GitHub username, optionally uses a token from a URL parameter (?token=...), and displays the account creation date in YYYY-MM-DD UTC format inside an element with id #github-created-at
+This project displays an aria-live alert that reports the status of a GitHub lookup. It informs the user when the lookup starts, succeeds, or fails.
