@@ -1,14 +1,23 @@
-document.getElementById('lookup-button').addEventListener('click', function() {
-    const statusElement = document.getElementById('github-status');
-    statusElement.textContent = 'Looking up GitHub status...';
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('lookupForm');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
 
-    // Simulate a lookup
-    setTimeout(() => {
-        const success = Math.random() > 0.5; // Randomly succeed or fail
-        if (success) {
-            statusElement.textContent = 'GitHub status: All systems operational.';
-        } else {
-            statusElement.textContent = 'GitHub status: Service unavailable.';
-        }
-    }, 2000);
+    // Load cached data from localStorage
+    const cachedData = JSON.parse(localStorage.getItem('formData'));
+    if (cachedData) {
+        nameInput.value = cachedData.name || '';
+        emailInput.value = cachedData.email || '';
+    }
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = {
+            name: nameInput.value,
+            email: emailInput.value
+        };
+        // Cache the form data in localStorage
+        localStorage.setItem('formData', JSON.stringify(formData));
+        alert('Form submitted successfully!');
+    });
 });
